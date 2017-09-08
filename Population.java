@@ -66,11 +66,11 @@ public class Population {
 		Graphics2D gc = context.createGraphics();
 		for (int i = 0; i < this.newDNA.numOfPolygons; i++) {
 			Polygon poly = new Polygon(this.newDNA.xpoints[i], this.newDNA.ypoints[i], this.newDNA.numOfVertices);
-			int r = this.newDNA.r[i];
+			/*int r = this.newDNA.r[i];
 			int g = this.newDNA.g[i];
 			int b = this.newDNA.b[i];
-			int a = this.newDNA.a[i];
-			gc.setColor(new Color(r, g, b, a));
+			int a = this.newDNA.a[i];*/
+			gc.setColor(new Color(this.newDNA.pixel, true));
 			gc.fillPolygon(poly);
 		}
 		this.newImg = context;
