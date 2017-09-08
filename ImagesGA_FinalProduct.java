@@ -155,6 +155,7 @@ public class ImagesGA_FinalProduct extends JFrame {
 		return pixels;
 	}
 	
+	/* pretty much dead code at the moment
 	public static int[][] getHistogram(int[][] pixels) {
 		int w = pixels.length;
 		int h = pixels[0].length;
@@ -225,6 +226,7 @@ public class ImagesGA_FinalProduct extends JFrame {
 		}
 		return histogram;
 	}
+	*/
 	
 	private void prepareImagePanes() {
 		referenceImgPane = new ReferenceImg();
