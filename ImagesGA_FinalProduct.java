@@ -155,79 +155,6 @@ public class ImagesGA_FinalProduct extends JFrame {
 		return pixels;
 	}
 	
-	/* pretty much dead code at the moment
-	public static int[][] getHistogram(int[][] pixels) {
-		int w = pixels.length;
-		int h = pixels[0].length;
-		int[][] histogram = new int[4][5];
-		
-		for (int y = 0; y < h; y++) {
-			for (int x = 0; x < w; x++) {
-				int pixelValue = pixels[x][y];
-				
-				int r = (pixelValue >> 16) & 0xFF;
-				int g = (pixelValue >> 6) & 0xFF;
-				int b = (pixelValue) & 0xFF;
-				int a = (pixelValue >> 24) & 0xFF;
-				
-//				sets up r histogram
-				if (r <= 51) {
-					histogram[0][0] += 1;
-				} else if ((r > 51) && (r <= 102)) {
-					histogram[0][1] += 1;
-				} else if ((r > 102) && (r <= 153)) {
-					histogram[0][2] += 1;
-				} else if ((r > 153) && (r <= 204)) {
-					histogram[0][3] += 1;
-				} else if ((r > 204) && (r <= 255)) {
-					histogram[0][4] += 1;
-				}
-				
-//				sets up g histogram
-				if (g <= 51) {
-					histogram[1][0] += 1;
-				} else if ((g > 51) && (g <= 102)) {
-					histogram[1][1] += 1;
-				} else if ((g > 102) && (g <= 153)) {
-					histogram[1][2] += 1;
-				} else if ((g > 153) && (g <= 204)) {
-					histogram[1][3] += 1;
-				} else if ((g > 204) && (g <= 255)) {
-					histogram[1][4] += 1;
-				}
-				
-//				sets up b histogram
-				if (b <= 51) {
-					histogram[2][0] += 1;
-				} else if ((b > 51) && (b <= 102)) {
-					histogram[2][1] += 1;
-				} else if ((b > 102) && (b <= 153)) {
-					histogram[2][2] += 1;
-				} else if ((b > 153) && (b <= 204)) {
-					histogram[2][3] += 1;
-				} else if ((b > 204) && (b <= 255)) {
-					histogram[2][4] += 1;
-				}
-				
-//				sets up a histogram
-				if (a <= 51) {
-					histogram[3][0] += 1;
-				} else if ((a > 51) && (a <= 102)) {
-					histogram[3][1] += 1;
-				} else if ((a > 102) && (a <= 153)) {
-					histogram[3][2] += 1;
-				} else if ((a > 153) && (a <= 204)) {
-					histogram[3][3] += 1;
-				} else if ((a > 204) && (a <= 255)) {
-					histogram[3][4] += 1;
-				}
-				
-			}
-		}
-		return histogram;
-	}
-	*/
-	
 	private void prepareImagePanes() {
 		referenceImgPane = new ReferenceImg();
 		
@@ -279,7 +206,6 @@ public class ImagesGA_FinalProduct extends JFrame {
 	
 	private void prepareRadioButtons() {
 		radioButtonPane = new JPanel();
-//		radioButtonPane.setBackground(Color.GRAY);
 		radioButtonPane.setLayout(new GridBagLayout());
 		GridBagConstraints gbc = new GridBagConstraints();
 		
@@ -455,7 +381,6 @@ public class ImagesGA_FinalProduct extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				System.out.println("Button Pressed");
 				
 				if (button == startButton) {
@@ -489,7 +414,6 @@ public class ImagesGA_FinalProduct extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				if (radiobutton == mutationSoft) {
 					mrS = true;
 					mrH = false;
@@ -525,7 +449,6 @@ public class ImagesGA_FinalProduct extends JFrame {
 
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				// TODO Auto-generated method stub
 				if (toggle == polyToggle) {
 					if (toggle.isSelected()) {
 						polyOn = true;
@@ -569,13 +492,11 @@ public class ImagesGA_FinalProduct extends JFrame {
 
 			@Override
 			public void windowOpened(WindowEvent e) {
-				// TODO Auto-generated method stub
 				
 			}
 
 			@Override
 			public void windowClosing(WindowEvent e) {
-				// TODO Auto-generated method stub
 				if (frame.population != null) {
 					frame.population.saveCurrentDNA();
 				}
@@ -584,31 +505,26 @@ public class ImagesGA_FinalProduct extends JFrame {
 
 			@Override
 			public void windowClosed(WindowEvent e) {
-				// TODO Auto-generated method stub
 				
 			}
 
 			@Override
 			public void windowIconified(WindowEvent e) {
-				// TODO Auto-generated method stub
 				
 			}
 
 			@Override
 			public void windowDeiconified(WindowEvent e) {
-				// TODO Auto-generated method stub
 				
 			}
 
 			@Override
 			public void windowActivated(WindowEvent e) {
-				// TODO Auto-generated method stub
 				
 			}
 
 			@Override
 			public void windowDeactivated(WindowEvent e) {
-				// TODO Auto-generated method stub
 				
 			}
 			
@@ -620,20 +536,16 @@ public class ImagesGA_FinalProduct extends JFrame {
 
 			@Override
 			public void keyTyped(KeyEvent e) {
-				// TODO Auto-generated method stub
 				
 			}
 
 			@Override
 			public void keyPressed(KeyEvent e) {
-				// TODO Auto-generated method stub
-				System.out.println("Key Pressed");
 				
 			}
 
 			@Override
 			public void keyReleased(KeyEvent e) {
-				// TODO Auto-generated method stub
 				
 			}
 			
@@ -649,7 +561,6 @@ public class ImagesGA_FinalProduct extends JFrame {
 	}
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		new ImagesGA_FinalProduct();
 	}
 
@@ -664,7 +575,6 @@ class ReferenceImg extends JPanel {
 	public ReferenceImg() {
 		this.referenceImg = ImagesGA_FinalProduct.getImage(ImagesGA_FinalProduct.path);
 		this.referenceImgLabel = new JLabel(new ImageIcon(this.referenceImg));
-//		this.setBackground(Color.RED);
 		this.add(this.referenceImgLabel);
 	}
 	public void paint(Graphics g) {
@@ -683,7 +593,6 @@ class BestImg extends JPanel {
 	public BestImg() {
 		this.bestImg = ImagesGA_FinalProduct.getImage(ImagesGA_FinalProduct.path);
 		this.bestImgLabel = new JLabel(new ImageIcon(this.bestImg));
-//		this.setBackground(Color.CYAN);
 		this.setSize(this.bestImg.getWidth(), this.bestImg.getHeight());
 		this.add(this.bestImgLabel);
 	}
@@ -707,7 +616,6 @@ class Img extends JPanel {
 	public Img() {
 		this.img = ImagesGA_FinalProduct.getImage(ImagesGA_FinalProduct.path);
 		this.imgLabel = new JLabel(new ImageIcon(this.img));
-//		this.setBackground(Color.GREEN);
 		this.setSize(this.img.getWidth(), this.img.getHeight());
 		this.add(this.imgLabel);
 	}
@@ -719,7 +627,6 @@ class Img extends JPanel {
 	public void paint(Graphics g) {
 		Graphics2D graphics = (Graphics2D)g;
 		graphics.drawImage(this.img, 0, 0, null);
-//		graphics.dispose();
 	}
 }
 
@@ -754,7 +661,6 @@ class UpdateImages {
 			ImagesGA_FinalProduct.bestImgPane.updateImage(this.population.getCurrentImage());
 			ImagesGA_FinalProduct.imgPane.updateImage(this.population.getNewImage());
 			
-//			ImagesGA_FinalProduct.referenceImgPane.repaint();
 			ImagesGA_FinalProduct.bestImgPane.repaint();
 			ImagesGA_FinalProduct.imgPane.repaint();
 		}
